@@ -1,0 +1,27 @@
+---
+name: magento
+description: ''
+keywords: ''
+type: Magento
+documentation: ''
+images:
+- name: mariadb
+  source: docker-registry.neucloud.cn:5000/paintedfox/mariadb:latest
+  category: db
+  type: Default
+  environment:
+  - variable: USER
+    value: user
+  - variable: PASS
+    value: password
+- name: magento
+  source: paimpozhil/magento-docker:latest
+  category: app
+  type: Default
+  ports:
+  - host_port: '80'
+    container_port: '80'
+    proto: TCP
+  links:
+  - service: mariadb
+    alias: db
