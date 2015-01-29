@@ -15,7 +15,7 @@ images:
   - variable: PASS
     value: password
 - name: magento
-  source: paimpozhil/magento-docker:latest
+  source: docker-registry.neucloud.cn:5000/paimpozhil/magento-docker:latest
   category: app
   type: Default
   ports:
